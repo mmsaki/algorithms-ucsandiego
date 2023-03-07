@@ -1,0 +1,107 @@
+Hi, and welcome to this lesson.
+Today, we're going to introduce some basic definitions related to graphs.
+Basic definitions Graph theory is probably one of the most common
+subfields of discrete mathematics.
+Graphs are mathematical structures that are used to represent the relationships between
+objects.
+Mathematically, a graph is composed of a finite set of vertices, V, and a set of edges, E.
+We can therefore refer to a graph as a couple G composed of V and E.
+A graph is often depicted using circles for vertices and lines for edges.
+Some examples.
+Graphs can be used to represent relationships between family members in a family tree, in
+in which case members would be represented as vertices and their relationships as edges,
+or, similarly, to represent molecule interactions in a biological organism,
+neural networks in the brain, hyperlinks between websites,
+or, simply, a maze, in which cells can be represented as vertices and adjacent cells
+not separated by a wall can be linked with edges.
+There are multiple ways to define graphs.
+In the simplest case, edges convey information about which pairs of vertices are connected
+and which are not.
+This means that E becomes a set of pairs of vertices.
+A pair {u,v} is an unordered set that contains two distinct elements, u and v.
+Considering that they're unordered, the pairs {u,v} and {v,u} are identical.
+The order of a graph is the number of vertices it contains, which is 7 here in the example.
+The size of the graph is the number of edges, which is 9 in this example.
+As you can see, this is a simple, effective way to visualize a graph.
+But it might also be misleading, because the creation of a figure like this requires you
+to make arbitrary decisions about the coordinates of vertices and the forms of lines.
+This can be seen in the following example figure, which shows two graphs that appear
+to be different.
+However, these two graphs are identical in the sense that they have exactly the same
+set of vertices and the same set of edges.
+Graphs were first introduced by Euler in 1736.
+He was interested in formally proving that no one could walk around the city of Konigsberg
+and cross each of its bridges exactly one time.
+To prove this, he showed that starting and finishing at one point would require the graph to contain 0 or 2 land masses with an odd number of bridges.
+Since Konigsberg land masses all contained an odd number of bridges, this route was impossible.
+In some cases, edges can be directed, which means that a vertex u can be connected to
+a vertex v, even if v is not connected to u.
+In such cases, edges are made up of couples of vertices, such as, for example, (u,v).
+Couples are more informative than pairs because the order of vertices in the couple is meaningful.
+For example, the couple (u,v) is distinct from the couple (v,u) if u and v are distinct
+themselves, whereas the pair {u,v} and the pair {v,u} are identical.
+When using couples, graphs are known as digraphs.
+We will only consider graphs whose edges are pairs in this course, but it's worth pointing
+out that the algorithms presented here do also apply to digraphs.
+The adjacency matrix and weighted graphs
+As in the previous examples, it's preferable to index vertices from 1 to n, which is the
+order of the graph.
+When vertices of the graph are indexed appropriately, an alternative way to represent a graph is
+to use a matrix.
+The adjacency matrix of a graph is a matrix with as many rows and columns as the order
+of the graph.
+The adjacency matrix is built by putting a 1 at line i and column j if {i,j} is an edge,
+and putting a 0 otherwise.
+Here's an example of a graph and its corresponding adjacency matrix.
+You should note that the adjacency matrix of a graph is always symmetric.
+Adjacency matrices can be generalized to take values other than 0s and 1s, which allows
+weighted graphs to be defined.
+Weighted graphs are particularly useful when edges represent distances or delays between
+vertices, because values in the adjacency matrix can be used to indicate the corresponding
+quantities.
+To take an example, a weighted graph can model the distances between major cities in the
+US, and connection weights can be used to represent these distances.
+As well as distances, weights can be used to represent occurrences, proximities, relationships,
+and so on.
+Paths and geodesic distances
+A path is an ordered sequence of edges that are distinct from one other, and is obtained
+from a sequence of vertices by joining any two consecutive vertices in the corresponding
+edge.
+The two extreme vertices of the sequence are called the extremities of the path.
+Take a look at this graph: In this example, {v_1,v_2}, {v_2,v_6}, {v_4,v_6},
+{v_3,v_4} is a path, and we've obtained it from the sequence of vertices v_1,v_2,v_6,v_4,v_3.
+Paths are often confused with walks.
+A walk is a sequence of vertices, such that any two consecutive vertices form an edge
+in the graph.
+The difference is that, in a path, an edge cannot appear twice.
+For example, v_1, v_2, v_4, v_2 in the previous graph is a walk, but the corresponding sequence
+{v_1,v_2}, {v_2, v_4}, {v_2,v_4} is not a path, because of the repetition of the edge
+{v_2,v_4}.
+A cycle in a graph is a path in which the extremities are identical.
+For example, in the previous graph {v_2,v_6}, {v_4,v_6}, {v_3,v_4}, {v_2,v_3} is a cycle
+obtained from the sequence of vertices v_2, v_6, v_4, v_3, v_2.
+The length of a path is the length of the sequence of edges.
+For weighted graphs, the length corresponds to the sum of the weights.
+If there exists at least one path linking two vertices u and v, there exists a shortest
+one.
+Most of the following lessons will be spent learning how to find the shortest paths between
+two vertices in a graph.
+Finally, a graph is said to be connected if any two vertices are extremities of a path.
+All the example graphs we've considered so far are connected.
+Here's one that's not connected:
+Standard graphs
+Some graphs are very useful because they can appear in many situations.
+For example, we encounter trees all the time: in file systems, in genealogical graphs, in
+sport competitions where tournaments are often depicted as trees and so on.
+Trees are connected graphs that are cycle-free.
+Note that trees are often confused with rooted trees, in which connected vertices have a
+specific relationship with one another.
+Rooted trees can be defined by choosing one arbitrary vertex to be the root of the tree.
+Another example of a standard graph is the complete graph.
+A complete graph includes all possible edges, and is often a good choice to test the abilities
+or the computation time of an algorithm that operates on graphs.
+Mazes can also be represented as graphs.
+In this case, vertices can be used to represent the cells of the maze, and edges can be defined
+as neighboring cells that are not separated by a wall.
+Thanks for your attention.
+I've really enjoyed talking about graph theory with you today.
